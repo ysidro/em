@@ -1,0 +1,143 @@
+---
+interface Props {
+  id: string;
+  title: string;
+  icon?: string;
+  items?: string[];
+}
+
+const { id, title, icon, items = [] } = Astro.props;
+const dialogId = `dialog-${id}`;
+---
+
+<!-- Flip card -->
+<div class="flip-card" data-opens={dialogId}>
+  <div class="flip-card-inner">
+
+    <!-- FRONT -->
+    <div class="flip-card-front">
+      <div class="flex flex-col items-center justify-center h-full p-6 text-center">
+        {icon && <img src={icon} alt={title} class="w-20 h-20 mb-5 object-contain" />}
+        <h3 class="font-['Montserrat'] text-xs font-bold uppercase tracking-widest leading-snug" style="color:#CBD1BA;">
+          {title}
+        </h3>
+      </div>
+    </div>
+
+    <!-- BACK -->
+    <div class="flip-card-back">
+      <div class="flex flex-col justify-between h-full p-6">
+        <div>
+          <h3 class="font-['Montserrat'] text-xs font-bold uppercase tracking-widest mb-4" style="color:#1e2939;">
+            {title}
+          </h3>
+          <ul class="space-y-1.5">
+            {items.slice(0, 6).map((item) => (
+              <li class="text-xs flex items-start gap-2" style="color:#1e2939;">
+                <span class="mt-1" style="color:#1e2939;font-size:8px;">◦</span>
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <button
+          class="mt-4 text-xs font-semibold font-['Montserrat'] underline underline-offset-2 self-start"
+          style="color:#1e2939;"
+          onclick={`document.getElementById('${dialogId}').showModal()`}
+        >
+          ver más
+        </button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- Native dialog (modal) — rendered server-side, opened with JS showModal() -->
+<dialog
+  id={dialogId}
+  class="backdrop:bg-[#1C1F39]/90 p-0 max-w-2xl w-[90vw] max-h-[90vh] overflow-y-auto"
+  style="background:#fff;"
+>
+  <div class="p-8 relative">
+    <button
+      autofocus
+      class="absolute top-3 right-4 text-xl font-bold leading-none hover:opacity-60"
+      style="color:#1C1F39;"
+      onclick={`document.getElementById('${dialogId}').close()`}
+      aria-label="Cerrar"
+    >✕</button>
+
+    <h2 class="font-['Cinzel'] text-lg font-bold mb-6 pr-6 flex items-center gap-2" style="color:#9B7B72;">
+      <span class="text-sm" style="color:#CBD1BA;">◆</span>
+      {title}
+    </h2>
+
+    <!-- Content injected by JS from #modal-src-{id} -->
+    <div id={`modal-body-${id}`} class="prose-em text-sm"></div>
+  </div>
+</dialog>
+
+<style>
+  .flip-card {
+    height: 320px;
+    perspective: 1200px;
+  }
+
+  .flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.55s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-style: preserve-3d;
+  }
+
+  .flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+
+  .flip-card-front,
+  .flip-card-back {
+    position: absolute;
+    inset: 0;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+  }
+
+  .flip-card-front {
+    background-color: #1C1F39;
+  }
+
+  .flip-card-back {
+    background-color: #ffffff;
+  }
+
+  /* Offset shadow — matches .item-services:after from original */
+  .flip-card::after {
+    content: '';
+    width: 100%;
+    height: 100%;
+    background: #CBD1BA;
+    position: absolute;
+    z-index: -1;
+    left: 10px;
+    top: 10px;
+  }
+
+  .flip-card-back {
+    transform: rotateY(180deg);
+  }
+
+  dialog::backdrop {
+    background: rgba(28, 31, 57, 0.9);
+  }
+
+  dialog[open] {
+    display: block;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+  }
+</style>

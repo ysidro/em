@@ -1,0 +1,199 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { getCollection, render } from 'astro:content';
+
+const servicios = (await getCollection('servicios'))
+  .sort((a, b) => (a.data.order ?? 99) - (b.data.order ?? 99));
+
+const serviciosRendered = await Promise.all(
+  servicios.map(async (s) => {
+    const { Content } = await render(s);
+    return { s, Content };
+  })
+);
+---
+
+<Layout
+  title="Nuestros Servicios"
+  description="Servicios de Legal, Asuntos Públicos, Comunicación y Manejo de Crisis, Sostenibilidad y ESG, Asesoría Financiera, Formación Corporativa y Cumplimiento Corporativo."
+>
+  <!-- Banner -->
+  <section class="relative flex items-center justify-center" style="min-height:35vh;background-color:#1C1F39;">
+    <img
+      src="/images/BANNER_NUESTROS-SERVICIOS.png"
+      alt="Nuestros Servicios"
+      class="absolute inset-0 w-full h-full object-cover opacity-50"
+    />
+    <h1 class="relative z-10 font-['Cinzel'] text-3xl md:text-5xl font-semibold text-white text-center">
+      Nuestros Servicios
+    </h1>
+  </section>
+
+  <!-- Cards grid -->
+  <section class="py-14" style="background-color:#f7f7f7;">
+    <div class="em-container">
+
+      <!-- Row 1: 3 equal cards -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+        {serviciosRendered.slice(0, 3).map(({ s }) => (
+          <div class="service-card flex flex-col relative p-6 text-white" style="background-color:#1C1F39;">
+
+
+            <!-- Icon + Title -->
+            <div class="flex items-center gap-3 mb-5">
+              {s.data.icon && (
+                <img src={s.data.icon} alt={s.data.title} class="w-10 h-10 object-contain flex-shrink-0" />
+              )}
+              <h2 class="font-['Montserrat'] text-sm font-bold uppercase tracking-wider leading-tight" style="color:#CBD1BA;">
+                {s.data.title}
+              </h2>
+            </div>
+
+            <!-- Items list -->
+            <ul class="flex-1 space-y-2 mb-6">
+              {(s.data.items ?? []).map((item) => (
+                <li class="text-xs font-['Montserrat'] opacity-85 leading-snug">{item}</li>
+              ))}
+            </ul>
+
+            <!-- VER MÁS -->
+            <div class="text-right">
+              <button
+                class="text-xs font-bold font-['Montserrat'] tracking-widest hover:opacity-70 transition-opacity"
+                style="color:#CBD1BA;"
+                onclick={`document.getElementById('dialog-srv-${s.id}').showModal()`}
+              >
+                VER MÁS
+              </button>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <!-- Row 2: wide + stacked -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+        <!-- Wide card (Sostenibilidad) -->
+        {serviciosRendered[3] && (() => {
+          const { s } = serviciosRendered[3];
+          return (
+            <div class="service-card flex flex-col relative p-6 text-white" style="background-color:#1C1F39;">
+  
+              <div class="flex items-center gap-3 mb-5">
+                {s.data.icon && <img src={s.data.icon} alt={s.data.title} class="w-10 h-10 object-contain flex-shrink-0" />}
+                <h2 class="font-['Montserrat'] text-sm font-bold uppercase tracking-wider leading-tight" style="color:#CBD1BA;">{s.data.title}</h2>
+              </div>
+              <ul class="flex-1 space-y-2 mb-6">
+                {(s.data.items ?? []).map((item) => (
+                  <li class="text-xs font-['Montserrat'] opacity-85 leading-snug">{item}</li>
+                ))}
+              </ul>
+              <div class="text-right">
+                <button
+                  class="text-xs font-bold font-['Montserrat'] tracking-widest hover:opacity-70 transition-opacity"
+                  style="color:#CBD1BA;"
+                  onclick={`document.getElementById('dialog-srv-${s.id}').showModal()`}
+                >VER MÁS</button>
+              </div>
+            </div>
+          );
+        })()}
+
+        <!-- Right column: 2 stacked cards -->
+        <div class="flex flex-col gap-6">
+          {serviciosRendered.slice(4).map(({ s }) => (
+            <div class="service-card flex flex-col relative p-6 text-white" style="background-color:#1C1F39;">
+  
+              <div class="flex items-center gap-3 mb-4">
+                {s.data.icon && <img src={s.data.icon} alt={s.data.title} class="w-10 h-10 object-contain flex-shrink-0" />}
+                <h2 class="font-['Montserrat'] text-sm font-bold uppercase tracking-wider leading-tight" style="color:#CBD1BA;">{s.data.title}</h2>
+              </div>
+              <ul class="flex-1 space-y-1.5 mb-5">
+                {(s.data.items ?? []).slice(0, 5).map((item) => (
+                  <li class="text-xs font-['Montserrat'] opacity-85 leading-snug">{item}</li>
+                ))}
+              </ul>
+              <div class="text-right">
+                <button
+                  class="text-xs font-bold font-['Montserrat'] tracking-widest hover:opacity-70 transition-opacity"
+                  style="color:#CBD1BA;"
+                  onclick={`document.getElementById('dialog-srv-${s.id}').showModal()`}
+                >VER MÁS</button>
+              </div>
+            </div>
+          ))}
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Modals (one per service) -->
+  {serviciosRendered.map(({ s, Content }) => (
+    <dialog
+      id={`dialog-srv-${s.id}`}
+      class="p-0 max-w-2xl w-[90vw] max-h-[90vh] overflow-y-auto"
+      style="background:#fff;"
+    >
+      <div class="p-8 relative">
+        <button
+          autofocus
+          class="absolute top-3 right-4 text-xl font-bold leading-none hover:opacity-60"
+          style="color:#1C1F39;"
+          onclick={`document.getElementById('dialog-srv-${s.id}').close()`}
+          aria-label="Cerrar"
+        >✕</button>
+
+        <div class="flex items-center gap-3 mb-6 pr-8">
+          {s.data.icon && <img src={s.data.icon} alt={s.data.title} class="w-10 h-10 object-contain flex-shrink-0" style="filter:invert(1) sepia(1) saturate(0.5) hue-rotate(180deg) brightness(0.4);" />}
+          <h2 class="font-['Cinzel'] text-lg font-bold" style="color:#9B7B72;">{s.data.title}</h2>
+        </div>
+
+        <div class="prose-em text-sm">
+          <Content />
+        </div>
+      </div>
+    </dialog>
+  ))}
+
+</Layout>
+
+<style is:global>
+  .service-card {
+    position: relative;
+  }
+
+  .service-card::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: #cbd1ba;
+    position: absolute;
+    z-index: -1;
+    left: 10px;
+    top: 10px;
+  }
+</style>
+
+<style>
+  dialog::backdrop {
+    background: rgba(28, 31, 57, 0.9);
+  }
+  dialog[open] {
+    display: block;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+  }
+</style>
+
+<script>
+  document.querySelectorAll('dialog[id^="dialog-srv-"]').forEach((el) => {
+    const dialog = el as HTMLDialogElement;
+    dialog.addEventListener('click', (e) => {
+      if (e.target === dialog) dialog.close();
+    });
+  });
+</script>

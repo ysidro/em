@@ -1,0 +1,53 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+
+const posts = (await getCollection('publicaciones'))
+  .sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime());
+---
+
+<Layout
+  title="Publicaciones"
+  description="Artículos y análisis sobre estrategia empresarial, sostenibilidad, ESG, asuntos públicos y más, por el equipo de EM Estrategia."
+>
+  <!-- Banner -->
+  <section class="relative flex items-center justify-center py-20" style="background-color:#1C1F39;">
+    <img src="/images/BANNER_PUBLICACIONES.png" alt="Publicaciones" class="absolute inset-0 w-full h-full object-cover opacity-40" />
+    <h1 class="relative z-10 font-['Cinzel'] text-3xl md:text-5xl font-bold text-center" style="color:#CBD1BA;">Publicaciones</h1>
+  </section>
+
+  <!-- Posts grid -->
+  <section class="em-container py-16">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      {posts.map((post) => (
+        <a href={`/publicaciones/${post.id}/`} class="block group bg-white hover:shadow-xl transition-shadow duration-200 overflow-hidden border border-gray-100">
+          {post.data.image ? (
+            <div class="overflow-hidden h-48">
+              <img
+                src={post.data.image}
+                alt={post.data.imageAlt ?? post.data.title}
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+              />
+            </div>
+          ) : (
+            <div class="h-48 flex items-center justify-center" style="background-color:#1C1F39;">
+              <span class="text-4xl font-['Cinzel'] font-bold" style="color:#CBD1BA;">EM</span>
+            </div>
+          )}
+          <div class="p-5">
+            {post.data.category && (
+              <p class="text-xs font-semibold uppercase tracking-widest mb-2 font-['Montserrat']" style="color:#CBD1BA;">{post.data.category}</p>
+            )}
+            <h2 class="font-['Cinzel'] text-sm font-semibold leading-snug line-clamp-3 mb-2" style="color:#1C1F39;">{post.data.title}</h2>
+            {post.data.description && (
+              <p class="text-xs text-gray-600 line-clamp-2 font-['Montserrat']">{post.data.description}</p>
+            )}
+            <p class="text-xs text-gray-400 mt-3 font-['Montserrat']">
+              {new Date(post.data.date).toLocaleDateString('es-DO', { year: 'numeric', month: 'long', day: 'numeric' })}
+            </p>
+          </div>
+        </a>
+      ))}
+    </div>
+  </section>
+</Layout>

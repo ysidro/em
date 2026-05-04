@@ -1,0 +1,45 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout
+  title="Responsabilidad Social"
+  description="Nos comprometemos a tener un impacto positivo en la sociedad y el medio ambiente. Expo Sostenible, Voces Sostenibles y más iniciativas de EM Estrategia."
+>
+  <!-- Banner -->
+  <section class="relative flex items-center justify-center py-20" style="background-color:#1C1F39;">
+    <img src="/images/BANNER_RESP_SOCIAL.png" alt="Responsabilidad Social" class="absolute inset-0 w-full h-full object-cover opacity-40" />
+    <h1 class="relative z-10 font-['Cinzel'] text-3xl md:text-5xl font-bold text-center" style="color:#CBD1BA;">Responsabilidad Social</h1>
+  </section>
+
+  <!-- Intro -->
+  <section style="background-color:#eeeeee;" class="py-12">
+    <div class="em-container text-center max-w-2xl mx-auto">
+      <img src="/images/diamante.png" alt="" class="mx-auto mb-6 w-12" />
+      <p class="text-base leading-relaxed font-['Montserrat']">
+        Nos comprometemos a tener un impacto positivo en la sociedad y el medio ambiente. Trabajamos en el marco de la sostenibilidad y la responsabilidad social empresarial.
+      </p>
+    </div>
+  </section>
+
+  <!-- Expo Sostenible -->
+  <section id="nuestro-equipo" class="em-container py-16">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-center team-profile">
+      <div class="md:col-span-2">
+        <h2 class="font-['Cinzel'] text-xl font-bold mb-4 flex items-center gap-2" style="color:#9B7B72;">
+          <span style="color:#CBD1BA;">◆</span>
+          Expo Sostenible / Voces Sostenibles
+        </h2>
+        <p class="text-sm leading-relaxed font-['Montserrat'] mb-4">
+          Primer evento multisectorial que promueve acciones y proyectos enfocados en la <strong>sostenibilidad</strong>, garantizando el equilibrio entre el crecimiento económico, el cuidado del medio ambiente y el bienestar social.
+        </p>
+        <a href="/contacto/" class="btn-primary text-sm">Contáctanos</a>
+      </div>
+      <div class="grid grid-cols-2 gap-3">
+        <img src="/images/screenshot-2025-10-27-at-08-31-08.png" alt="Voces Sostenibles" class="w-full object-cover" />
+        <img src="/images/screenshot-2025-10-27-at-08-31-13.png" alt="Expo Sostenible" class="w-full object-cover" />
+        <img src="/images/screenshot-2025-10-27-at-08-31-20.png" alt="Voces Sostenibles" class="w-full object-cover col-span-2" />
+      </div>
+    </div>
+  </section>
+</Layout>

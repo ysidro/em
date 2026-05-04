@@ -1,0 +1,83 @@
+---
+const nav = [
+  { href: '/publicaciones/', label: 'PUBLICACIONES' },
+  { href: '/equipo/', label: 'EQUIPO' },
+];
+const nav2 = [
+  { href: '/servicios/', label: 'SERVICIOS' },
+  { href: '/contacto/', label: 'CONTACTO' },
+];
+const current = Astro.url.pathname;
+---
+
+<header id="site-header" class="sticky top-0 z-50 w-full transition-shadow duration-300"
+  style="background-color:#1C1F39;">
+  <div class="max-w-screen-xl mx-auto px-4">
+    <div class="flex items-center justify-between h-20 md:h-24">
+
+      <!-- Nav left -->
+      <nav class="hidden md:flex items-center gap-6 flex-1 justify-end">
+        {nav.map(({ href, label }) => (
+          <a
+            href={href}
+            class={`text-xs font-semibold tracking-widest transition-colors duration-200 hover:text-[#CBD1BA] font-['Montserrat'] ${current.startsWith(href) ? 'text-[#CBD1BA]' : 'text-white'}`}
+          >
+            {label}
+          </a>
+        ))}
+      </nav>
+
+      <!-- Logo center -->
+      <a href="/" class="flex-shrink-0 mx-6 md:mx-10">
+        <img
+          src="/images/logo.png"
+          alt="EM Estrategia y Soluciones"
+          width="120"
+          height="120"
+          class="h-16 md:h-20 w-auto"
+        />
+      </a>
+
+      <!-- Nav right -->
+      <nav class="hidden md:flex items-center gap-6 flex-1 justify-start">
+        {nav2.map(({ href, label }) => (
+          <a
+            href={href}
+            class={`text-xs font-semibold tracking-widest transition-colors duration-200 hover:text-[#CBD1BA] font-['Montserrat'] ${current.startsWith(href) ? 'text-[#CBD1BA]' : 'text-white'}`}
+          >
+            {label}
+          </a>
+        ))}
+      </nav>
+
+      <!-- Mobile hamburger -->
+      <button id="mobile-menu-btn" class="md:hidden text-white p-2" aria-label="Abrir menú">
+        <svg width="22" height="16" viewBox="0 0 22 16" fill="none">
+          <rect width="22" height="1.5" fill="currentColor"/>
+          <rect y="7" width="22" height="1.5" fill="currentColor"/>
+          <rect y="14" width="22" height="1.5" fill="currentColor"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile menu -->
+  <div id="mobile-menu" class="hidden md:hidden border-t border-white/20" style="background-color:#1C1F39;">
+    <nav class="flex flex-col py-4 px-4 gap-4">
+      {[...nav, ...nav2].map(({ href, label }) => (
+        <a href={href} class="text-white text-sm font-semibold tracking-widest hover:text-[#CBD1BA] font-['Montserrat']">
+          {label}
+        </a>
+      ))}
+      <a href="/responsabilidad-social/" class="text-white text-sm font-semibold tracking-widest hover:text-[#CBD1BA] font-['Montserrat']">
+        RESPONSABILIDAD SOCIAL
+      </a>
+    </nav>
+  </div>
+</header>
+
+<script>
+  const btn = document.getElementById('mobile-menu-btn');
+  const menu = document.getElementById('mobile-menu');
+  btn?.addEventListener('click', () => menu?.classList.toggle('hidden'));
+</script>

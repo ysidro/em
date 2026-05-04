@@ -1,0 +1,282 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const pilares = [
+  {
+    icon: '/images/Compromiso.png',
+    title: 'Compromiso con la Excelencia:',
+    text: 'Buscamos la excelencia en cada aspecto de nuestro trabajo, esforzándonos por superar las expectativas de nuestros clientes. Creemos firmemente que la calidad y la atención al detalle son esenciales para lograr resultados sobresalientes.',
+    bg: '#1c1f39',
+  },
+  {
+    icon: '/images/legal.png',
+    title: 'Integridad y Ética:',
+    text: 'Nuestra integridad es inquebrantable. Mantenemos los más altos estándares éticos en cada decisión y recomendación que hacemos. Nos enorgullecemos de ser una firma de consultoría confiable y honesta.',
+    bg: '#212644',
+  },
+  {
+    icon: '/images/colaboracion.png',
+    title: 'Colaboración y Empatía:',
+    text: 'Valoramos las relaciones sólidas y creemos en la colaboración abierta con nuestros clientes. Escuchamos y entendemos sus necesidades, mostrando empatía en cada interacción.',
+    bg: '#1c1f39',
+  },
+  {
+    icon: '/images/innpovacion.png',
+    title: 'Innovación y Adaptabilidad:',
+    text: 'Abrazamos la innovación y la adaptabilidad como pilares para enfrentar los desafíos empresariales en constante cambio. Buscamos soluciones creativas y efectivas para nuestros clientes.',
+    bg: '#212644',
+  },
+];
+
+const team = [
+  {
+    name: 'ELIZABETH MENA',
+    role: 'Managing Partner',
+    email: 'emena@emestrategia.com',
+    image: '/images/IMG_2302-modificada-w2000-h2000.jpg',
+    intro: 'En el corazón de cada gran logro hay una mente estratégica y una ejecución excepcional.',
+    bio: 'Su carrera se ha forjado en la resolución de desafíos complejos y la entrega de resultados sobresalientes en cada etapa de su trayectoria profesional.<br/><br/>Con más de 25 años de experiencia, ha consolidado su reputación como una ejecutora de soluciones y una estratega maestra en la planificación y gestión de proyectos para empresas locales e internacionales.',
+    photoLeft: true,
+    accordion: [
+      {
+        title: 'Un Historial de Logros Significativos',
+        content: '<ul class="list-disc pl-4 space-y-2"><li>Pionera en Leveraged Buyout en la República Dominicana: Actuó como co-consejera del comprador en la primera Leveraged Buyout (LBO) en el país, facilitando la adquisición de la concesión para la administración de cinco aeropuertos internacionales por parte de un fondo mixto de inversión.</li><li>Operación de Financiamiento de 1,2 Billones de Dólares: Como co-consejera legal, lideró con éxito la operación de financiamiento de 1,2 billones de dólares para el proyecto de la mina de oro Pueblo Viejo, representando a Barrick Gold Corporation.</li><li>Supervisión del Megaproyecto en Punta Cana: Desempeñó un papel fundamental en el desarrollo del proyecto turístico e inmobiliario más grande en Punta Cana, contribuyendo significativamente a su éxito.</li><li>Vicepresidenta y Asesora para América Latina: En Corporación Minera Dominicana, S.A.S., lideró varios departamentos clave, incluyendo legal, cumplimiento, recursos humanos, relaciones institucionales, corporativas y comunitarias.</li></ul>',
+      },
+      {
+        title: 'Gestión de Crisis y Sostenibilidad',
+        content: '<p>Ha sido responsable de gestionar situaciones críticas y relaciones con todas las partes interesadas, incluyendo el exitoso rescate de mineros atrapados en el subterráneo durante 10 días en 2022 y la resolución de una crisis sindical que culminó con sentencias únicas en el área.</p><p class="mt-2">Bajo su dirección, se creó la estrategia de sostenibilidad de la empresa, convirtiéndola en la primera empresa minera carbono neutral reconocida por las Naciones Unidas.</p>',
+      },
+      {
+        title: 'Cumplimiento y Relaciones Comunitarias',
+        content: '<p>Reconociendo la creciente importancia de la responsabilidad corporativa y el cumplimiento normativo en la industria extractiva, estableció el Departamento de Cumplimiento con el objetivo de garantizar que la empresa operara de acuerdo con los más altos estándares éticos y legales.</p><p class="mt-2">Trabajó en estrecha colaboración con grupos comunitarios, líderes locales y organizaciones no gubernamentales para asegurarse de que las operaciones mineras tuvieran un impacto positivo en la vida de las personas que viven en las áreas cercanas.</p>',
+      },
+      {
+        title: 'Liderazgo en Gremios y Organizaciones Empresariales',
+        content: '<p>Como presidenta de ADOEXPO, fortaleció la organización y estableció las bases para un gremio moderno y sostenible, comprometido con la defensa de los intereses de los exportadores dominicanos.</p><p class="mt-2">Durante la pandemia de COVID-19 y una crisis logística de gran magnitud, proporcionó apoyo crítico a los miembros de Adoexpo, incluyendo información sobre regulaciones comerciales cambiantes y asesoramiento en la gestión de crisis.</p><p class="mt-2">Impulsó la adopción de prácticas comerciales responsables y sostenibles entre los miembros, fortaleciendo la posición de los exportadores dominicanos en el mercado global.</p>',
+      },
+    ],
+  },
+  {
+    name: 'ELIS FAÑA',
+    role: 'Partner',
+    email: 'emfana@emestrategia.com',
+    image: '/images/eliz.png',
+    intro: 'Una trayectoria de más de dos décadas, la convierten en un icono de liderazgo en el sector bancario, tanto a nivel local como internacional.',
+    bio: 'Con una capacidad excepcional para liderar y una vasta y variada experiencia, le permite presentar soluciones integrales para satisfacer las necesidades financieras de los clientes.',
+    photoLeft: false,
+    accordion: [
+      {
+        title: 'Historial Laboral Impecable',
+        content: '<p>Vicepresidenta y Jefa de Banca Comercial y Corporativa en instituciones bancarias de renombre, incluyendo The Bank of Nova Scotia (Scotiabank) y Banco Dominicano del Progreso, liderando equipos de alto rendimiento contribuyendo significativamente en el crecimiento sostenible del negocio y de las carteras de prestamos, incluyendo transacciones estructuradas para desarrollo de hoteles, proyectos de infraestructura, entre otros.</p>',
+      },
+      {
+        title: 'Maestra en Diversas Áreas',
+        content: '<p>Su experiencia abarca múltiples facetas de la banca, desde la corporativa y comercial hasta la banca privada y auditoria interna. Su conocimiento profundo y su visión única han sido forjados en instituciones de elite como JP Morgan y Coutts &amp; Co., donde obtuvo una comprensión inigualable de los controles internos y las mejores practicas de la industria.</p>',
+      },
+      {
+        title: 'Educación y Excelencia',
+        content: '<p>Posee una Maestría Ejecutiva en Administración de Empresas y una Licenciatura en Ciencias en Contabilidad. Su búsqueda constante de la excelencia la ha llevado a participar en cursos especializados en liderazgo, coaching, gestión comercial, inteligencia emocional, cumplimiento y prevención de lavado de activos, siempre respaldado por una sólida ética profesional.</p>',
+      },
+      {
+        title: 'Dominio de Idiomas y Alcance Internacional',
+        content: '<p>Su fluidez en inglés y español no solo ha abierto las puertas de oportunidades internacionales, sino que también le ha permitido comunicarse eficazmente con una amplia gama de clientes y colegas en todo el mundo.</p>',
+      },
+      {
+        title: 'Compromiso Social y Humanitario',
+        content: '<p>Más allá de su destacada carrera, demuestra un compromiso inquebrantable con la responsabilidad social, participando activamente en actividades de recaudación de fondos para comunidades necesitadas a través de la organización "Un Techo Para Mi País", como también el apadrinamiento de una escuela por uno de sus equipos.</p>',
+      },
+    ],
+  },
+  {
+    name: 'Nacelí Rosario',
+    role: 'Project Manager',
+    email: 'nrosario@emestrategia.com',
+    image: '/images/Screenshot-2025-10-10-at-11.49.36.webp',
+    intro: 'Administradora de Empresas, Especialista en Proyectos Comunitarios y Control de Calidad.',
+    bio: 'Con una sólida formación académica, que incluye una maestría en Gestión de Proyectos por la Universidad de Portsmouth y una licenciatura en Administración de Empresas, ha complementado su formación con cursos adicionales en gestión de proyectos sociales y herramientas como Microsoft Projects.<br/><br/>Más de 10 años en gestión de proyectos enfocados en comunidad, voluntariado, sostenibilidad ambiental y empresarial.',
+    photoLeft: true,
+    accordion: [],
+  },
+  {
+    name: 'Indira Lorenzo',
+    role: 'Of Counsel',
+    email: 'ilorenzo@emestrategia.com',
+    image: '/images/indira-EM.webp',
+    intro: 'Ingeniera industrial con enfoque destacado en sostenibilidad, representa la perfecta combinación de visión estratégica y liderazgo.',
+    bio: 'Su sólida formación académica y experiencia en sectores clave la colocan como una líder visionaria y estratégica.<br/><br/>Graduada con distinción de la Pontificia Universidad Católica Madre y Maestra, Indira posee un Master Executive en Energías Renovables de la Escuela de Organización Industrial de Madrid. Su especialización incluye Gestión de Proyectos Ambientales, Six Sigma Master Black Belt y Estándares de Reportes GRI.',
+    photoLeft: false,
+    accordion: [
+      {
+        title: 'Formación Académica Sobresaliente',
+        content: '<p>Graduada con distinción de la Pontificia Universidad Católica Madre y Maestra, Indira posee un Master Executive en Energías Renovables de la Escuela de Organización Industrial de Madrid. Su especialización incluye Gestión de Proyectos Ambientales, Six Sigma Master Black Belt y Estándares de Reportes GRI.</p>',
+      },
+      {
+        title: 'Trayectoria Profesional',
+        content: '<p>Con un enfoque en sectores altamente regulados, Indira ha liderado proyectos estratégicos en turismo, hidrocarburos y energías. Su liderazgo se destaca en la planificación y aseguramiento de la calidad, marcando la pauta en la transformación del entorno empresarial.</p>',
+      },
+      {
+        title: 'Consultoría y Compromiso con la Sostenibilidad',
+        content: '<p>Como consultora Indira ha gestionado proyectos para el sector privado y la cooperación internacional. Actualmente se desempeña como Directora de Sostenibilidad en MARTI y la Fundación Tropigas refleja su compromiso en liderar iniciativas de triple impacto y multisectoriales. Sirviendo como asesora de EM Estrategia y Soluciones.</p>',
+      },
+      {
+        title: 'Contribuciones a Políticas Públicas',
+        content: '<p>Indira ha dejado su huella en el ámbito público al coordinar la mesa de agua para el proyecto de Taxonomía Verde de la Superintendencia del Mercado de Valores. Su participación activa en gremios y comités de sostenibilidad y cambio climático resalta su compromiso con el bienestar global.</p>',
+      },
+      {
+        title: 'Experiencia Turística Impactante',
+        content: '<p>En el ámbito del turismo, Indira se destaca por su capacidad excepcional para elevar la eficiencia operativa y la calidad a estándares sin precedentes. Su enfoque innovador en la gestión ambiental y la aplicación de tecnologías de vanguardia redefine los límites del sector.</p><p class="mt-2">Su enfoque meticuloso garantiza operaciones turísticas eficientes y servicios de calidad excepcional. Pionera en la gestión ambiental, fusiona la sostenibilidad con la innovación tecnológica, integrando soluciones avanzadas que definen el futuro de la sostenibilidad en el turismo.</p>',
+      },
+      {
+        title: 'Planificación Estratégica y Cumplimiento de Incentivos',
+        content: '<p>La planificación estratégica de Indira va más allá de la convencionalidad. Su visión estratégica no solo anticipa desafíos, sino que también garantiza el cumplimiento de incentivos, asegurando un impacto positivo y sostenible en cada proyecto.</p>',
+      },
+      {
+        title: 'Liderazgo en Hidrocarburos y Energías',
+        content: '<p>En el ámbito de hidrocarburos y energías, Indira ha demostrado ser una fuerza impulsora en el desarrollo de proyectos sostenibles y la eficiencia en la producción energética. Su integración con la red eléctrica y el cumplimiento de estándares internacionales establecen nuevos estándares de referencia en el sector.</p>',
+      },
+      {
+        title: 'Compromiso con la Sostenibilidad y el Medio Ambiente',
+        content: '<p>Indira administró el Fondo de Agua de Santo Domingo liderando proyectos de adaptación al cambio climático y la promoción de alianzas público-privadas para la sostenibilidad involucrando a comunidades. Su enfoque integral promueve la sostenibilidad a través de la participación activa y la colaboración estratégica.</p>',
+      },
+      {
+        title: 'Experiencia en Alianzas Público-Privadas (APP) / Fideicomisos',
+        content: '<p>En el complejo mundo de las Alianzas Público-Privadas y Fideicomisos, Indira ha demostrado una eficiencia sobresaliente en la ejecución de proyectos y la transferencia de riesgos. Su habilidad para administrar fondos y garantizar el cumplimiento de objetivos es insuperable.</p>',
+      },
+      {
+        title: 'Contribuciones Destacadas en Aviación',
+        content: '<p>Indira ha demostrado su experiencia en servicios de seguridad, manejo de equipaje, operaciones logísticas y adaptación a la demanda del mercado, asegurando eficiencia y satisfacción del cliente.</p>',
+      },
+      {
+        title: 'Logros que Dejan Huella',
+        content: '<ul class="list-disc pl-4 space-y-2"><li>Desarrollo exitoso de hoteles boutique para la cadena Excellence.</li><li>Liderazgo en proyectos sostenibles de energías renovables.</li><li>Éxito en la creación y gestión del Fondo Agua Santo Domingo.</li><li>Establecimiento de empresas de soporte de aviación en América del Norte.</li></ul>',
+      },
+    ],
+  },
+  {
+    name: 'Lia Villanueva Mena',
+    role: 'Junior Analyst especialista en Data',
+    email: 'lvillanueva@emestrategia.com',
+    image: '/images/Screenshot-2024-05-07-at-06.42.21-768x1024.png',
+    intro: 'Una combinación dinámica de habilidades estadísticas y visión estratégica.',
+    bio: 'Doble Licenciatura en Ciencia de Datos y Economía de Knox College, Lia ha acumulado experiencia y perfeccionado sus habilidades, desde su trabajo como estadística principal en juegos de baloncesto, béisbol y softbol hasta su incursión en inteligencia de mercado como Coordinadora Asistente en los datos de exportación en la República Dominicana para la Asociación Dominicana de Exportadores (ADOEXPO), así como en su paso como Interna de Protección de Datos y IA para el Representante Adriano Espaillat en el Congreso de los Estados Unidos, donde participa en proyectos innovadores de IA.',
+    photoLeft: true,
+    accordion: [
+      {
+        title: 'Multidisciplinaria',
+        content: '<p>Además de su desempeño profesional, Lia ha demostrado un profundo compromiso con la vida universitaria y el servicio comunitario. Fue integrante del equipo de fútbol femenino en Knox College, donde no solo demostró su destreza atlética, sino que también desarrolló habilidades de liderazgo y trabajo en equipo invaluables.</p><p class="mt-2">Su participación en organizaciones como el Comité Asesor de Estudiantes-Atletas de la Conferencia del Medio Oeste y Kappa Kappa Gamma refleja su dedicación a la defensa, desarrollo del liderazgo y apoyo a la comunidad. Con un conjunto de habilidades multifacéticas que incluyen competencias en R, Python, Java y más, y su dominio trilingüe en inglés, español y francés, Lia se posiciona como un activo versátil y altamente valorado en cualquier entorno profesional o académico.</p>',
+      },
+    ],
+  },
+];
+---
+
+<Layout
+  title="Nuestro Equipo"
+  description="Conoce al equipo de EM Estrategia: profesionales de alto perfil en legal, finanzas, comunicación, sostenibilidad y estrategia internacional."
+>
+  <!-- Banner -->
+  <section class="relative flex items-center justify-center" style="min-height:45vh;background-color:#1C1F39;">
+    <img src="/images/BANNER_NUESTROS-PILARES.png" alt="Nuestros Pilares" class="absolute inset-0 w-full h-full object-cover opacity-50" />
+    <h1 class="relative z-10 font-['Cinzel'] text-3xl md:text-5xl font-bold text-center tracking-widest" style="color:#CBD1BA;">
+      NUESTROS PILARES
+    </h1>
+  </section>
+
+  <!-- 4 Pilares -->
+  <div id="valores" class="em-container -mt-10 relative z-20">
+    <div class="grid grid-cols-2 md:grid-cols-4">
+      {pilares.map(({ icon, title, text, bg }) => (
+        <div class="p-6 text-center text-white" style={`background-color:${bg};`}>
+          <img src={icon} alt={title} class="w-20 h-20 mx-auto mb-4 object-contain" />
+          <h3 class="font-['Cinzel'] text-xs font-semibold mb-3" style="color:#CBD1BA;">{title}</h3>
+          <p class="text-xs leading-relaxed opacity-85">{text}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+
+  <!-- Team members -->
+  <section id="nuestro-equipo" class="py-6">
+    {team.map((member, i) => (
+      <div class={`py-10 ${i % 2 !== 0 ? '' : 'bg-white'}`} style={i % 2 !== 0 ? 'background-color:#f3f3f3;' : ''}>
+        <div class="em-container grid grid-cols-1 md:grid-cols-3 gap-0 md:gap-8 items-start">
+
+          <!-- Photo -->
+          <div class={`${member.photoLeft ? 'md:order-1' : 'md:order-2'} mb-6 md:mb-0`}>
+            <div class="team-photo-wrap">
+              <img
+                src={member.image}
+                alt={member.name}
+                class="w-full object-cover object-top relative z-10"
+                style="max-height:420px;"
+              />
+            </div>
+          </div>
+
+          <!-- Text -->
+          <div class={`md:col-span-2 px-2 md:px-0 ${member.photoLeft ? 'md:order-2' : 'md:order-1'}`}>
+
+            <h2 class="font-['Cinzel'] text-xl font-bold mb-1 flex items-center gap-2" style="color:#9B7B72;">
+              <span style="color:#CBD1BA;">◆</span>
+              <span set:html={member.name} />
+            </h2>
+            <p class="font-['Montserrat'] text-sm font-bold mb-0.5" style="color:#1C1F39;">{member.role}</p>
+            <a href={`mailto:${member.email}`} class="text-xs font-['Montserrat'] hover:opacity-70 block mb-4" style="color:#555;">
+              {member.email}
+            </a>
+
+            <p class="font-['Cinzel'] text-sm font-bold mb-3 uppercase leading-snug" style="color:#1C1F39;">
+              <strong set:html={member.intro} />
+            </p>
+
+            <div class="text-sm leading-relaxed text-justify font-['Montserrat'] mb-5 text-gray-700" set:html={member.bio} />
+
+            <!-- Accordion -->
+            {member.accordion.length > 0 && (
+              <div class="accordion space-y-0">
+                {member.accordion.map((section) => (
+                  <div class="accordion-item border-b border-gray-200">
+                    <button
+                      class="accordion-btn w-full flex items-center justify-between py-3 px-1 text-left text-xs font-semibold font-['Montserrat'] hover:opacity-70 transition-opacity"
+                      style="color:#1C1F39;"
+                      aria-expanded="false"
+                    >
+                      <span>{section.title}</span>
+                      <span class="accordion-icon ml-2 flex-shrink-0 text-lg leading-none transition-transform duration-200" style="color:#CBD1BA;">›</span>
+                    </button>
+                    <div class="accordion-content hidden px-2 pb-4 text-xs leading-relaxed text-gray-600 font-['Montserrat']" set:html={section.content} />
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+
+        </div>
+      </div>
+    ))}
+  </section>
+</Layout>
+
+<style>
+  .accordion-btn[aria-expanded="true"] .accordion-icon {
+    transform: rotate(90deg);
+  }
+
+  .team-photo-wrap {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+  }
+</style>
+
+<script>
+  document.querySelectorAll('.accordion-btn').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const item = btn.closest('.accordion-item') as HTMLElement;
+      const content = item.querySelector('.accordion-content') as HTMLElement;
+      const isOpen = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', String(!isOpen));
+      content.classList.toggle('hidden', isOpen);
+    });
+  });
+</script>

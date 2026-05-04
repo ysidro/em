@@ -1,0 +1,57 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout
+  title="Contacto"
+  description="Contáctanos en EM Estrategia y Soluciones. C/Ángel Severo Cabral No. 49-A, Urbanización Fernández, Santo Domingo, RD. Tel: (829) 915-1778"
+>
+  <!-- Banner -->
+  <section class="relative flex items-center justify-center py-20" style="background-color:#1C1F39;">
+    <img src="/images/BANNER_CONTACTO.png" alt="Contacto" class="absolute inset-0 w-full h-full object-cover opacity-40" />
+    <h1 class="relative z-10 font-['Cinzel'] text-3xl md:text-5xl font-bold text-center" style="color:#CBD1BA;">Contacto</h1>
+  </section>
+
+  <!-- Contact info + map -->
+  <section class="relative py-20" style="background-color:#1C1F39;">
+    <img src="/images/FONDO_CONTACTO.png" alt="" class="absolute inset-0 w-full h-full object-cover opacity-30" aria-hidden="true" />
+    <div class="em-container relative z-10">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
+
+        <!-- Contact details -->
+        <div class="text-white space-y-4 font-['Montserrat']">
+          <div>
+            <p class="font-bold text-base" style="color:#CBD1BA;">info@emestrategia.com</p>
+            <p class="font-bold text-base" style="color:#CBD1BA;">emena@emestrategia.com</p>
+          </div>
+          <div>
+            <a href="https://www.instagram.com/emestrategia" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-sm hover:opacity-70 transition-opacity">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="w-4 h-4 fill-current" style="color:#CBD1BA;"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg>
+              @emestrategia
+            </a>
+          </div>
+          <p class="text-sm">(829) 915-1778</p>
+          <p class="text-sm leading-relaxed">
+            C/Ángel Severo Cabral No. 49-A<br/>
+            Urbanización Fernández,<br/>
+            D.N. Santo Domingo, República Dominicana
+          </p>
+        </div>
+
+        <!-- Map -->
+        <div class="relative p-4 text-white" style="background-color:#1C1F39;">
+          <div class="absolute left-2.5 top-2.5 right-0 bottom-0 -z-10" style="background-color:#CBD1BA;"></div>
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3784.2692341868806!2d-69.95183308846205!3d18.471459982540043!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8eaf89f95665a229%3A0xf58ac27cc7cf8382!2sa%2C%20C.%20%C3%81ngel%20Severo%20Cabral%2049%2C%20Santo%20Domingo!5e0!3m2!1ses!2sdo!4v1701697919032!5m2!1ses!2sdo"
+            width="100%"
+            height="350"
+            style="border:0;"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Ubicación EM Estrategia"
+          ></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
